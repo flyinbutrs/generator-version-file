@@ -2,7 +2,7 @@
 const Generator = require("yeoman-generator");
 const _ = require("lodash");
 const spawn = require("child_process").spawnSync;
-
+const moment = require("moment");
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
@@ -15,6 +15,7 @@ module.exports = class extends Generator {
   }
 
   initializing() {
+    this.rubyReleaseDate = moment().format("YYYY-MM-DD");
     this.defaults = this.config.get("promptValues") || {};
     this.package = this.fs.readJSON("package.json") || {};
     this.currentVersion =
@@ -43,6 +44,16 @@ module.exports = class extends Generator {
         name: "path",
         message: "Relative path of version file (directory only)?",
         default: this.defaults.path,
+        store: true
+      },
+      {
+        type: "input",
+        name: "module",
+        message: "What is the module name?",
+        default: this.defaults.module,
+        when: function(answers) {
+          return answers.language === "Ruby";
+        },
         store: true
       }
     ];
