@@ -5,5 +5,13 @@
       "authorEmail": "dan7348@gmail.com",
       "authorUrl": "https://github.com/flyinbutrs/"
     }
+  },
+  "generator-lw-standards": {
+    "promptValues": {
+      "python": false,
+      "twine": false,
+      "serverless": false
+    },
+    "generator_version": "1.0.0"
   }
 }

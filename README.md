@@ -1,9 +1,12 @@
-# generator-version-file [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-version-file
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > A Yeoman Generator for keeping a version file up to date
 
 ## Overview
 
-This generator is meant to be used with projects of any language using [commitizen](https://commitizen.github.io/cz-cli/) and [stardard-version](https://github.com/conventional-changelog/standard-version) to keep up to date, but want the version to be accessible in the native language as part of the codebase.
+This generator is meant to be used with projects of any language to keep an internal version number in the code up to date with the actual package version. This chore of the release process can be easily added to a pipeline using this tool.
+
+It was concieved especially to be used with projects of any language that use [commitizen](https://commitizen.github.io/cz-cli/) and [stardard-version](https://github.com/conventional-changelog/standard-version) for release and changelog generation.
 
 ### Currently Supported Languages
 Each file and template is built into the generator ([additional languages welcome!](https://github.com/flyinbutrs/generator-version-file/pulls))

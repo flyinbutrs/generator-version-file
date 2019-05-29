@@ -2,28 +2,42 @@
   "name": "generator-version-file",
   "version": "0.1.0",
   "description": "A Yeoman Generator for keeping a version file up to date",
-  "homepage": "https://github.com/flyinbutrs/generator-version-file",
+  "main": "generators/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flyinbutrs/generator-version-file.git"
+  },
+  "keywords": [
+    "version",
+    "yeoman-generator"
+  ],
   "author": "Dan Rosenbloom <dan7348@gmail.com> (https://github.com/flyinbutrs/)",
+  "email": "drosenbloom@logicworks.net",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "pretest": "eslint .",
+    "release": "standard-version"
+  },
+  "homepage": "https://github.com/flyinbutrs/generator-version-file",
   "files": [
     "generators"
-  ],
-  "main": "generators/index.js",
-  "keywords": [
-    "yeoman generator version",
-    "yeoman-generator"
   ],
   "devDependencies": {
     "yeoman-test": "^1.7.0",
     "yeoman-assert": "^3.1.0",
     "coveralls": "^3.0.2",
-    "eslint": "^5.9.0",
-    "prettier": "^1.15.2",
-    "husky": "^1.2.0",
-    "lint-staged": "^8.1.0",
+    "eslint": "^5.15.1",
+    "prettier": "^1.11.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-config-xo": "^0.25.0",
-    "jest": "^23.5.0"
+    "jest": "^23.5.0",
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "standard-version": "^6.0.1"
   },
   "engines": {
     "npm": ">= 4.0.0"
@@ -45,6 +59,13 @@
     "*.json": [
       "prettier --write",
       "git add"
+    ],
+    "*.py": [
+      "pylint"
+    ],
+    "*.rb": [
+      "rubocop --auto-correct",
+      "git add"
     ]
   },
   "eslintConfig": {
@@ -63,15 +84,6 @@
       "prettier"
     ]
   },
-  "scripts": {
-    "pretest": "eslint .",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/flyinbutrs/generator-version-file.git"
-  },
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/flyinbutrs/generator-version-file/issues"
   }

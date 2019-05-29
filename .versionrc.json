@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "precommit": "yo generator-version --force --git"
+  }
+}
