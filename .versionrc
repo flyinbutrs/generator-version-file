@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "precommit": "yo version-file --force --git"
+  }
+}
