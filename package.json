@@ -1,13 +1,9 @@
 {
   "name": "generator-version-file",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A Yeoman Generator for keeping a version file up to date",
   "homepage": "https://github.com/flyinbutrs/generator-version-file",
-  "author": {
-    "name": "Dan Rosenbloom",
-    "email": "dan7348@gmail.com",
-    "url": "https://github.com/flyinbutrs/"
-  },
+  "author": "Dan Rosenbloom <dan7348@gmail.com> (https://github.com/flyinbutrs/)",
   "files": [
     "generators"
   ],
@@ -71,6 +67,12 @@
     "pretest": "eslint .",
     "test": "jest"
   },
-  "repository": "flyinbutrs/generator-version-file",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flyinbutrs/generator-version-file.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flyinbutrs/generator-version-file/issues"
+  }
 }
