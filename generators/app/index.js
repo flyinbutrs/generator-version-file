@@ -58,8 +58,14 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.versionFilePath =
-      this.answers.path + "/" + this.filenames[this.answers.language];
+    if (this.answers.path) {
+      this.versionFilePath = [
+        this.answers.path,
+        this.filenames[this.answers.language]
+      ].join("/");
+    } else {
+      this.versionFilePath = this.filenames[this.answers.language];
+    }
 
     this.fs.copyTpl(
       this.templatePath(this.answers.language),
