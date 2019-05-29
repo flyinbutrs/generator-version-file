@@ -1,40 +1,60 @@
 "use strict";
 const Generator = require("yeoman-generator");
-const chalk = require("chalk");
-const yosay = require("yosay");
+const _ = require("lodash");
+const spawn = require("child_process").spawnSync;
 
 module.exports = class extends Generator {
-  prompting() {
-    // Have Yeoman greet the user.
-    this.log(
-      yosay(
-        `Welcome to the unreal ${chalk.red("generator-version")} generator!`
-      )
-    );
+  initializing() {
+    this.defaults = this.config.get("promptValues") || {};
+    this.package = this.fs.readJSON("package.json") || {};
+    this.currentVersion =
+      this.package.version ||
+      spawn(["git", "describe", "--abbrev=0"]) ||
+      "0.1.0";
+    this.filenames = {
+      Javascript: "version.js",
+      Python: "version.py",
+      Ruby: "version.rb"
+    };
+  }
 
-    const prompts = [
+  prompting() {
+    var prompts = [
       {
-        type: "confirm",
-        name: "someAnswer",
-        message: "Would you like to enable this option?",
-        default: true
+        type: "list",
+        name: "language",
+        message: "What language?",
+        choices: ["Javascript", "Python", "Ruby"],
+        default: this.defaults.language,
+        store: true
+      },
+      {
+        type: "input",
+        name: "path",
+        message: "Relative path of version file (directory only)?",
+        default: this.defaults.path,
+        store: true
       }
     ];
 
-    return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
-      this.props = props;
+    prompts = _.filter(prompts, function(p) {
+      return p.default === undefined;
+    });
+
+    return this.prompt(prompts).then(answers => {
+      // To access answers later use this.answers.someAnswer;
+      this.answers = answers;
     });
   }
 
   writing() {
-    this.fs.copy(
-      this.templatePath("dummyfile.txt"),
-      this.destinationPath("dummyfile.txt")
-    );
-  }
+    const filepath =
+      this.answers.path + "/" + this.filenames[this.answers.language];
 
-  install() {
-    this.installDependencies();
+    this.fs.copyTpl(
+      this.templatePath(this.answers.language),
+      this.destinationPath(filepath),
+      this
+    );
   }
 };
