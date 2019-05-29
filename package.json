@@ -1,8 +1,8 @@
 {
-  "name": "generator-version",
+  "name": "generator-version-file",
   "version": "0.0.0",
   "description": "A Yeoman Generator for keeping a version file up to date",
-  "homepage": "https://github.com/flyinbutrs/generator-version",
+  "homepage": "https://github.com/flyinbutrs/generator-version-file",
   "author": {
     "name": "Dan Rosenbloom",
     "email": "dan7348@gmail.com",
@@ -33,8 +33,9 @@
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
+    "lodash": "^4.17.11",
+    "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
   },
   "jest": {
@@ -70,6 +71,6 @@
     "pretest": "eslint .",
     "test": "jest"
   },
-  "repository": "flyinbutrs/generator-version",
+  "repository": "flyinbutrs/generator-version-file",
   "license": "MIT"
 }
