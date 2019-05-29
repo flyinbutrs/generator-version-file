@@ -7,7 +7,7 @@ describe("generator-version-file:app", () => {
   beforeAll(() => {
     return helpers
       .run(path.join(__dirname, "../generators/app"))
-      .withPrompts({ language: "Ruby", path: "" });
+      .withPrompts({ language: "Ruby", path: "", module: "TestModule" });
   });
 
   it("creates version.rb", () => {

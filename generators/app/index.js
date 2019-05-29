@@ -3,6 +3,7 @@ const Generator = require("yeoman-generator");
 const _ = require("lodash");
 const spawn = require("child_process").spawnSync;
 const moment = require("moment");
+
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
