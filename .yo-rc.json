@@ -13,5 +13,11 @@
       "serverless": false
     },
     "generator_version": "1.0.0"
+  },
+  "generator-version-file": {
+    "promptValues": {
+      "language": "Javascript",
+      "path": "generator/app"
+    }
   }
 }
