@@ -19,7 +19,7 @@ module.exports = class extends Generator {
     this.package = this.fs.readJSON("package.json") || {};
     this.currentVersion =
       this.package.version ||
-      spawn(["git", "describe", "--abbrev=0"]) ||
+      spawn("git", ["describe", "--abbrev=0"]) ||
       "0.1.0";
     this.filenames = {
       Javascript: "version.js",
