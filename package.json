@@ -17,7 +17,7 @@
   "scripts": {
     "test": "jest --coverage",
     "pretest": "eslint .",
-    "release": "standard-version"
+    "release": "standard-version -a"
   },
   "homepage": "https://github.com/flyinbutrs/generator-version-file",
   "files": [
