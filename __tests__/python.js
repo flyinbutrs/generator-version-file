@@ -7,10 +7,10 @@ describe("generator-version-file:app", () => {
   beforeAll(() => {
     return helpers
       .run(path.join(__dirname, "../generators/app"))
-      .withPrompts({ someAnswer: true });
+      .withPrompts({ language: "Python", path: "" });
   });
 
-  it("creates files", () => {
-    assert.file(["dummyfile.txt"]);
+  it("creates version.py", () => {
+    assert.file(["version.py"]);
   });
 });
