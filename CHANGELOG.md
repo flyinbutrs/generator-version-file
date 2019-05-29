@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/flyinbutrs/generator-version-file/compare/v0.1.0...v0.2.0) (2019-05-29)
+
+
+### Build System
+
+* **standard-version:** use -a to include artifactss ([26195c9](https://github.com/flyinbutrs/generator-version-file/commit/26195c9))
+* add husky ([f64f23b](https://github.com/flyinbutrs/generator-version-file/commit/f64f23b))
+* add version.js via yo version-file ([63ddc5b](https://github.com/flyinbutrs/generator-version-file/commit/63ddc5b))
+* move .versionrc.json to .versionrc due to bug ([259f1cc](https://github.com/flyinbutrs/generator-version-file/commit/259f1cc))
+
+
+### Features
+
+* **ruby:** add prompt for module name and add release date ([0a55716](https://github.com/flyinbutrs/generator-version-file/commit/0a55716))
+
+
+### Tests
+
+* **ruby:** update test to include module prompt ([453db90](https://github.com/flyinbutrs/generator-version-file/commit/453db90))
+* add coverage to jest ([5414c60](https://github.com/flyinbutrs/generator-version-file/commit/5414c60))
+
+
+
 ## 0.1.0 (2019-05-29)
 
 
