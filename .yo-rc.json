@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Dan Rosenbloom",
+      "authorEmail": "dan7348@gmail.com",
+      "authorUrl": "https://github.com/flyinbutrs/"
+    }
+  }
+}
