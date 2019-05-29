@@ -4,6 +4,16 @@ const _ = require("lodash");
 const spawn = require("child_process").spawnSync;
 
 module.exports = class extends Generator {
+  constructor(args, opts) {
+    super(args, opts);
+    this.option("git", {
+      desc: "git add version file when complete",
+      alias: "g",
+      type: Boolean,
+      default: false
+    });
+  }
+
   initializing() {
     this.defaults = this.config.get("promptValues") || {};
     this.package = this.fs.readJSON("package.json") || {};
@@ -43,18 +53,24 @@ module.exports = class extends Generator {
 
     return this.prompt(prompts).then(answers => {
       // To access answers later use this.answers.someAnswer;
-      this.answers = answers;
+      this.answers = _.merge(answers, this.defaults);
     });
   }
 
   writing() {
-    const filepath =
+    this.versionFilePath =
       this.answers.path + "/" + this.filenames[this.answers.language];
 
     this.fs.copyTpl(
       this.templatePath(this.answers.language),
-      this.destinationPath(filepath),
+      this.destinationPath(this.versionFilePath),
       this
     );
+  }
+
+  end() {
+    if (this.options.git) {
+      spawn("git", ["add", this.versionFilePath]);
+    }
   }
 };
