@@ -87,8 +87,12 @@ module.exports = class extends Generator {
   }
 
   end() {
+    this.config.save();
     if (this.options.git) {
       spawn("git", ["add", this.versionFilePath]);
+      if (this.fs.exists(".yo-rc.json")) {
+        spawn("git", ["add", ".yo-rc.json"]);
+      }
     }
   }
 };
