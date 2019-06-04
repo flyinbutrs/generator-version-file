@@ -20,12 +20,14 @@ Each file and template is built into the generator ([additional languages welcom
 
 Ideally, this generator should be used with [`standard-version`](https://github.com/conventional-changelog/standard-version) as part of a release process to keep the version in the package in sync with the version in your package.json. You can direct that to happen in one of the two files to configure `standard-version`. Both of these options presuppose that you have installed `standard-version` already.
 
+:warning: *NOTE*: This you must run `yo version-file` once manually to initialize the `.yo-rc` file before using this as part of your release process. :warning:
+
 #### .versionrc
 
 ```json
 {
   "scripts": {
-    "precommit": "yo version-file --force --git"
+    "postbump": "yo version-file --force --git"
   }
 }
 ```
@@ -36,7 +38,7 @@ Ideally, this generator should be used with [`standard-version`](https://github.
 {
   "standard-version": {
     "scripts": {
-      "precommit": "yo version-file --force --git"
+      "postbump": "yo version-file --force --git"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "precommit": "yo version-file --force --git"
+    "postbump": "yo version-file --force --git"
   }
 }
