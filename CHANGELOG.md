@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/flyinbutrs/generator-version-file/compare/v0.2.2...v0.2.3) (2019-06-04)
+
+
+### Bug Fixes
+
+* **python:** make version.py pass pylint ([7e296c7](https://github.com/flyinbutrs/generator-version-file/commit/7e296c7))
+
+
+### Build System
+
+* use postbump hook instead of precommit for `yo version-file` ([1fe4ea4](https://github.com/flyinbutrs/generator-version-file/commit/1fe4ea4))
+
+
+
 ### [0.2.2](https://github.com/flyinbutrs/generator-version-file/compare/v0.2.1...v0.2.2) (2019-06-03)
 
 
