@@ -31,6 +31,7 @@ module.exports = class extends Generator {
   }
 
   prompting() {
+    console.log(this.options.git);
     var prompts = [
       {
         type: "list",
@@ -88,7 +89,7 @@ module.exports = class extends Generator {
 
   end() {
     this.config.save();
-    if (this.options.git) {
+    if (this.options.git === true) {
       spawn("git", ["add", this.versionFilePath]);
       if (this.fs.exists(".yo-rc.json")) {
         spawn("git", ["add", ".yo-rc.json"]);
