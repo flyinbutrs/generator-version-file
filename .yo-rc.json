@@ -17,7 +17,7 @@
   "generator-version-file": {
     "promptValues": {
       "language": "Javascript",
-      "path": "generator/app"
+      "path": "generators/app"
     }
   }
 }
