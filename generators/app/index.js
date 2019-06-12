@@ -3,6 +3,7 @@ const Generator = require("yeoman-generator");
 const _ = require("lodash");
 const spawn = require("child_process").spawnSync;
 const moment = require("moment");
+const GENERATOR_VERSION = require("./version");
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -88,6 +89,7 @@ module.exports = class extends Generator {
   }
 
   end() {
+    this.config.set("generator_version", GENERATOR_VERSION);
     this.config.save();
     if (this.options.git === true) {
       spawn("git", ["add", this.versionFilePath]);
