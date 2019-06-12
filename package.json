@@ -1,6 +1,6 @@
 {
   "name": "generator-version-file",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A Yeoman Generator for keeping a version file up to date",
   "main": "generators/app/index.js",
   "repository": {

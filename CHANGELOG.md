@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/flyinbutrs/generator-version-file/compare/v0.2.3...v0.3.0) (2019-06-12)
+
+
+### Bug Fixes
+
+* set main properly for composability ([4f6ed4f](https://github.com/flyinbutrs/generator-version-file/commit/4f6ed4f))
+
+
+### Build System
+
+* move version file to proper location :facepalm: ([af595e0](https://github.com/flyinbutrs/generator-version-file/commit/af595e0))
+
+
+### Features
+
+* save generator version in .yo-rc.json ([b6892e7](https://github.com/flyinbutrs/generator-version-file/commit/b6892e7))
+
+
+
 ### [0.2.3](https://github.com/flyinbutrs/generator-version-file/compare/v0.2.2...v0.2.3) (2019-06-04)
 
 
