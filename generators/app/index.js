@@ -32,7 +32,6 @@ module.exports = class extends Generator {
   }
 
   prompting() {
-    console.log(this.options.git);
     var prompts = [
       {
         type: "list",
