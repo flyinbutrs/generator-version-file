@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/flyinbutrs/generator-version-file/compare/v0.3.1...v0.3.2) (2019-08-16)
+
+
+### Bug Fixes
+
+* update dependencies ([e82fa06](https://github.com/flyinbutrs/generator-version-file/commit/e82fa06))
+
 ### [0.3.1](https://github.com/flyinbutrs/generator-version-file/compare/v0.3.0...v0.3.1) (2019-06-14)
 
 
